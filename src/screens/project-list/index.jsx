@@ -15,6 +15,7 @@ export const ProjectListScreen = () => {
   const [list, setList] = useState([])
   const [users, setUsers] = useState([])
 
+  // get projects api
   useEffect(() => {
     fetch(`${apiUrl}/projects?${qs.stringify(cleanObject(param))}`).then(async response => {
       if (response.ok) {
@@ -23,6 +24,7 @@ export const ProjectListScreen = () => {
     })
   }, [param])
 
+  // get users api
   useEffect(() => {
     fetch(`${apiUrl}/users`).then(async response => {
       if (response.ok) {
